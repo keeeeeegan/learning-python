@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Coffee Breuer</title>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+<link href='assets/main.css' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body class="sub-page">
+
+<header>
+  <div class="header-content">
+    <h1 class="logo">
+      <a href="index.html"><span class="top">Test</span> <span class="bottom">Site</span></a>
+    </h1>
+
+    <nav>
+      <ul>
+        <li><a href="/">Guestbook</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="content-container">
+  <div class="content">
+    <!-- content -->
+
+Hello {{ user.nickname }}!
+<h1>My GuestBook</h1><ol>
+{% for greeting in greetings %}
+    <li> {{ greeting.content|escape }}
+{% endfor %}
+</ol><hr>
+
+<form action="/sign" method=post>
+<label for="content"><b>Sign the guestbook</b></label><br />
+<textarea id="content" name="content" rows="3" cols="60"></textarea>
+<br /><br /><label for="something_random"><b>Favorite emoji</b></label><br />
+<input id="something_random" name="something_random" placeholder="Enter your favorite emoji..." />
+<br /><br /><input type=submit value="Sign Guestbook">
+</form>
+
+    <!-- /content -->
+  </div>
+</div>
+
+<footer>
+  <p>&copy; TestSite 2015</p>
+</footer>
+
+</body>
+</html>
